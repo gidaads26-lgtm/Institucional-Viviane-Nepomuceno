@@ -1,0 +1,15 @@
+{
+  "_leia": "Preencha os campos com os dados da Viviane e rode npm run build. Campo vazio (\"\") ou null esconde o trecho do site. Em atendeOnline use true, false ou null (ainda não confirmado).",
+
+  "siteUrl": "",
+
+  "endereco": "R. Santana, 134",
+  "bairro": "Albertina",
+  "cidade": "Conselheiro Lafaiete - MG, 36400-000",
+  "horarios": "",
+  "atendeOnline": true,
+
+  "depoimentos": [
+    { "texto": "", "autora": "" }
+  ]
+}

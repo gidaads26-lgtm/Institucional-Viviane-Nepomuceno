@@ -1,5 +1,5 @@
 {
-  "_leia": "Preencha os campos com os dados da Viviane e rode npm run build. Campo vazio (\"\") ou null esconde o trecho do site. Em atendeOnline use true, false ou null (ainda não confirmado).",
+  "_leia": "Preencha os campos com os dados da Viviane e rode npm run build. Campo vazio (\"\") ou null esconde o trecho do site. Em atendeOnline use true, false ou null (ainda não confirmado). Em videosDepoimentos cole os links dos vídeos do YouTube (vídeo comum ou Shorts), entre aspas e separados por vírgula; em youtubeCanal, o link do canal.",
 
   "siteUrl": "",
 
@@ -8,6 +8,9 @@
   "cidade": "Conselheiro Lafaiete - MG, 36400-000",
   "horarios": "",
   "atendeOnline": true,
+
+  "youtubeCanal": "",
+  "videosDepoimentos": [],
 
   "depoimentos": [
     { "texto": "", "autora": "" }

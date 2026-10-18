@@ -59,7 +59,7 @@
             <span class="line"><span>a verdadeira raiz</span></span>
             <span class="line"><span>da sua dor.</span></span>
           </h1>
-          <p class="hero-lede">Sou Viviane Nepomuceno. Ajudo mulheres a superarem traumas e dependência emocional através da Hipnoterapia e Neuroterapia. Você não precisa mais enfrentar isso sozinha. Vamos juntas dar o primeiro passo para resgatar a sua paz e qualidade de vida.</p>
+          <p class="hero-lede">Ajudo mulheres a superarem traumas e dependência emocional através da Hipnoterapia e Neuroterapia. Você não precisa mais enfrentar isso sozinha. Vamos juntas dar o primeiro passo para resgatar a sua paz e qualidade de vida.</p>
           <div class="hero-actions">
             <a class="btn" href="https://wa.me/5531997971224?text=Ol%C3%A1%2C%20Viviane.%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20consulta%20de%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" data-wa>
               Quero minha consulta de avaliação
@@ -225,11 +225,19 @@
 
     <!-- 7. Local de atendimento -->
     <section class="section place" id="local" aria-labelledby="local-titulo">
-      <div class="wrap place-grid">
-        <div class="place-copy">
-          <header class="sec-head">
-            <h2 id="local-titulo" class="h2">Local de <em>atendimento</em></h2>
-          </header>
+      <div class="wrap">
+        <header class="sec-head">
+          <h2 id="local-titulo" class="h2">Local de <em>atendimento</em></h2>
+        </header>
+        <div class="place-grid">
+          <div class="photo-frame" data-frame>
+            <div class="photo-rect">
+              <picture>
+                <source type="image/avif" srcset="/img/viviane-consultorio-480.avif 480w, /img/viviane-consultorio-800.avif 800w" sizes="(min-width: 52rem) 26rem, 86vw" />
+                <img src="/img/viviane-consultorio-800.webp" srcset="/img/viviane-consultorio-480.webp 480w, /img/viviane-consultorio-800.webp 800w" sizes="(min-width: 52rem) 26rem, 86vw" width="574" height="1020" alt="Sala de atendimento com sofá verde, mesa de centro de madeira e lustre de cristal" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+          </div>
           <div class="place-card">
             <span class="place-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
             <div>
@@ -238,24 +246,28 @@
             </div>
           </div>
         </div>
-        <div class="photo-frame" data-frame>
-          <div class="photo-rect">
-            <picture>
-              <source type="image/avif" srcset="/img/viviane-consultorio-480.avif 480w, /img/viviane-consultorio-800.avif 800w" sizes="(min-width: 52rem) 26rem, 86vw" />
-              <img src="/img/viviane-consultorio-800.webp" srcset="/img/viviane-consultorio-480.webp 480w, /img/viviane-consultorio-800.webp 800w" sizes="(min-width: 52rem) 26rem, 86vw" width="574" height="1020" alt="Sala de atendimento com sofá verde, mesa de centro de madeira e lustre de cristal" loading="lazy" decoding="async" />
-            </picture>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- 8. Depoimentos -->
-    <section class="section voices" aria-labelledby="dep-titulo">
+    <section class="section voices" id="depoimentos" aria-labelledby="dep-titulo">
       <div class="wrap">
         <header class="sec-head">
           <p class="chip"><span class="chip-dot" aria-hidden="true"></span>Depoimentos</p>
-          <h2 id="dep-titulo" class="h2">O que dizem <em>depois das sessões</em></h2>
+          <h2 id="dep-titulo" class="h2">O que meus pacientes <em>dizem</em></h2>
         </header>
+        <!-- se:videos --><ul class="video-list"><!-- videos -->
+        </ul>
+        <p class="center-cta"><!-- se:youtubeCanal -->
+          <a class="btn btn-outline" href="{{youtubeCanal}}" target="_blank" rel="noopener">
+            <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" class="fill"/></svg>
+            Ver mais depoimentos no YouTube
+          </a><!-- senao:youtubeCanal -->
+          <a class="btn btn-outline" href="https://www.instagram.com/terapiavivi/" target="_blank" rel="noopener">
+            <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="fill"/></svg>
+            Ver mais depoimentos no Instagram
+          </a><!-- /se:youtubeCanal -->
+        </p><!-- senao:videos -->
         <!-- se:depoimentos --><ul class="voice-list"><!-- depoimentos -->
         </ul>
         <p class="center-cta">
@@ -270,7 +282,7 @@
             <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="fill"/></svg>
             Ver os depoimentos no Instagram
           </a>
-        </div><!-- /se:depoimentos -->
+        </div><!-- /se:depoimentos --><!-- /se:videos -->
       </div>
     </section>
 

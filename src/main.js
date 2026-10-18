@@ -57,6 +57,18 @@ faqItems.forEach((d) => {
   });
 });
 
+/* Depoimentos em vídeo: o player do YouTube só carrega quando a pessoa clica */
+document.querySelectorAll('[data-yt]').forEach((a) => a.addEventListener('click', (e) => {
+  if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  const frame = document.createElement('iframe');
+  frame.src = `https://www.youtube-nocookie.com/embed/${a.dataset.yt}?autoplay=1&rel=0&playsinline=1`;
+  frame.title = a.getAttribute('aria-label');
+  frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  frame.allowFullscreen = true;
+  a.replaceWith(frame);
+}));
+
 /* Ondulação no clique dos botões */
 function ripple(e) {
   if (reduce) return;

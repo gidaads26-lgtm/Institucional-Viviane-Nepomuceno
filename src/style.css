@@ -207,7 +207,10 @@ a { color: inherit; }
 @media (hover: hover) { .pillar:hover { transform: translateY(-4px); } }
 
 .tags { display: flex; flex-wrap: wrap; gap: .6rem; }
-.tags-center { justify-content: center; margin-top: 2rem; }
+/* grade de tamanho igual: 2 x 2 no celular, uma linha só a partir do tablet */
+.tags-center { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 52rem; margin: 2rem auto 0; }
+.tags-center li { display: grid; place-items: center; min-height: 3.1rem; border-radius: 1rem; text-align: center; line-height: 1.25; text-wrap: balance; }
+@media (min-width: 40rem) { .tags-center { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 62rem; } }
 .tags li { padding: .5rem 1.1rem; border-radius: 999px; border: 1px solid rgba(178, 101, 88, .45); background: rgba(255, 255, 255, .65); font-size: .9rem; font-weight: 600; color: var(--ink); }
 
 /* ---------- 5. Atendimentos ---------- */

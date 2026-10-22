@@ -10,7 +10,11 @@
   "atendeOnline": true,
 
   "youtubeCanal": "",
-  "videosDepoimentos": [],
+  "videosDepoimentos": [
+    "https://www.youtube.com/watch?v=YMlcsSfC-qs&t=1s",
+    "https://www.youtube.com/watch?v=Af-yt-ypyl8",
+    "https://www.youtube.com/watch?v=1k9A9UV4s_Y"
+  ],
 
   "depoimentos": [
     { "texto": "", "autora": "" }

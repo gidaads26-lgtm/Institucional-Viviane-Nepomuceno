@@ -34,7 +34,6 @@ function lerDados() {
     .map((v) => (typeof v === 'string' ? { url: v } : v || {}))
     .map((v) => ({
       id: idYoutube(v.url || ''),
-      vertical: /\/shorts\//.test(v.url || ''),
       nome: String(v.nome || v.titulo || '').trim(),
       descricao: String(v.descricao || '').trim(),
       foto: String(v.foto || '').trim(),
@@ -68,10 +67,7 @@ function montar(html, d) {
     const rotulo = `Depoimento de ${v.nome || `paciente ${i + 1}`}`;
     const thumb = `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
     const play = '<span class="video-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>';
-    const capa = v.vertical
-      ? `<img src="${thumb}" alt="" width="480" height="360" loading="lazy" decoding="async" />
-                ${play}`
-      : `<span class="cover-photo${v.foto ? ' cover-photo-own' : ''}"><img src="${v.foto ? escape(v.foto) : thumb}" alt="" loading="lazy" decoding="async"${v.foto ? '' : ` style="${enquadrar(v.enquadramento)}"`} /></span>
+    const capa = `<span class="cover-photo${v.foto ? ' cover-photo-own' : ''}"><img src="${v.foto ? escape(v.foto) : thumb}" alt="" loading="lazy" decoding="async"${v.foto ? '' : ` style="${enquadrar(v.enquadramento)}"`} /></span>
                 ${play}
                 <span class="cover-text" aria-hidden="true">
                   <span class="cover-kicker">Depoimento de</span>
@@ -79,9 +75,9 @@ function montar(html, d) {
                 </span>
                 <span class="cover-brand" aria-hidden="true">Viviane Nepomuceno</span>`;
     return `
-          <li class="video${v.vertical ? ' video-vertical' : ''}">
+          <li class="video">
             <div class="video-media">
-              <a class="video-play${v.vertical ? '' : ' video-cover'}" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener" data-yt="${v.id}" aria-label="Assistir: ${escape(rotulo)}">
+              <a class="video-play video-cover" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener" data-yt="${v.id}" aria-label="Assistir: ${escape(rotulo)}">
                 ${capa}
               </a>
             </div>

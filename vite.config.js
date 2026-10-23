@@ -11,6 +11,21 @@ const escape = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').rep
 // aceita link de vídeo, de Shorts, youtu.be ou só o código de 11 caracteres
 const idYoutube = (url) => (String(url).match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})/) || String(url).trim().match(/^([\w-]{11})$/) || [])[1];
 
+// Posição da miniatura do YouTube (480 x 360) dentro da janela 3:4 da capa.
+// O vídeo gravado em pé ocupa só a faixa central da miniatura (152 x 270 px a partir de 164, 45);
+// a janela mostra um pedaço dessa faixa, ampliado pelo zoom, com o rosto (x, y em % da miniatura)
+// no centro, e nunca sai da faixa, para não aparecer borda preta.
+function enquadrar(e) {
+  const z = Math.max(1, Number(e?.zoom) || 1);
+  const larg = 3.16 * z;                        // largura da imagem / largura da janela
+  const vx = 1 / larg, vy = 1.333 / (0.75 * larg); // parte da imagem visível na janela
+  const prender = (v, min, max) => Math.min(Math.max(v, min), max);
+  const x0 = prender((Number(e?.x ?? 50) / 100) - vx / 2, 164 / 480, 316 / 480 - vx);
+  const y0 = prender((Number(e?.y ?? 40) / 100) - vy * 0.4, 45 / 360, 315 / 360 - vy);
+  const pct = (n) => `${(n * 100).toFixed(2)}%`;
+  return `width:${pct(larg)};left:${pct(-x0 * larg)};top:${pct(-y0 * larg * 0.75 / 1.333)};translate:none`;
+}
+
 function lerDados() {
   // o Bloco de Notas às vezes salva com BOM; remove antes de ler
   const d = JSON.parse(fs.readFileSync('dados.json', 'utf8').replace(/^﻿/, ''));
@@ -23,6 +38,7 @@ function lerDados() {
       nome: String(v.nome || v.titulo || '').trim(),
       descricao: String(v.descricao || '').trim(),
       foto: String(v.foto || '').trim(),
+      enquadramento: v.enquadramento || null,
     }))
     .filter((v) => v.id);
   d.local = [d.endereco, d.bairro, d.cidade].some((v) => v && String(v).trim()) ? 'sim' : '';
@@ -49,18 +65,17 @@ function montar(html, d) {
   // capa nas cores do site com a imagem do vídeo; o clique abre o YouTube em outra aba
   // ou, com JavaScript, toca o vídeo ali mesmo (src/main.js)
   html = html.replace('<!-- videos -->', d.videos.map((v, i) => {
-    const n = String(i + 1).padStart(2, '0');
-    const rotulo = v.nome ? `Depoimento de ${v.nome}` : `Depoimento ${n}`;
+    const rotulo = `Depoimento de ${v.nome || `paciente ${i + 1}`}`;
     const thumb = `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
     const play = '<span class="video-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>';
     const capa = v.vertical
       ? `<img src="${thumb}" alt="" width="480" height="360" loading="lazy" decoding="async" />
                 ${play}`
-      : `<span class="cover-photo${v.foto ? ' cover-photo-own' : ''}"><img src="${v.foto ? escape(v.foto) : thumb}" alt="" loading="lazy" decoding="async" /></span>
+      : `<span class="cover-photo${v.foto ? ' cover-photo-own' : ''}"><img src="${v.foto ? escape(v.foto) : thumb}" alt="" loading="lazy" decoding="async"${v.foto ? '' : ` style="${enquadrar(v.enquadramento)}"`} /></span>
                 ${play}
                 <span class="cover-text" aria-hidden="true">
-                  <span class="cover-kicker">Depoimento${v.nome ? ' de' : ''}</span>
-                  <span class="cover-name${v.nome ? '' : ' cover-number'}">${v.nome ? escape(v.nome) : n}</span>
+                  <span class="cover-kicker">Depoimento de</span>
+                  <span class="cover-name">${escape(v.nome || 'Paciente')}</span>
                 </span>
                 <span class="cover-brand" aria-hidden="true">Viviane Nepomuceno</span>`;
     return `

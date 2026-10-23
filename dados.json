@@ -1,5 +1,5 @@
 {
-  "_leia": "Preencha os campos com os dados da Viviane e rode npm run build. Campo vazio (\"\") ou null esconde o trecho do site. Em atendeOnline use true, false ou null (ainda não confirmado). Em videosDepoimentos cole os links dos vídeos do YouTube (vídeo comum ou Shorts), entre aspas e separados por vírgula. Para a capa, use { \"url\": \"link\", \"nome\": \"Nome da pessoa\", \"descricao\": \"Paciente\" }; sem nome, a capa mostra \"Paciente\". Em enquadramento, x e y são a posição do rosto na miniatura do YouTube (em %) e zoom é a aproximação. Em youtubeCanal, o link do canal.",
+  "_leia": "Preencha os campos com os dados da Viviane e rode npm run build. Campo vazio (\"\") ou null esconde o trecho do site. Em atendeOnline use true, false ou null (ainda não confirmado). Em videosDepoimentos cole os links dos vídeos do YouTube (vídeo comum ou Shorts), entre aspas e separados por vírgula. Para a capa, use { \"url\": \"link\", \"nome\": \"Nome da pessoa\", \"descricao\": \"Paciente\" }; sem nome, a capa mostra \"Paciente\". Em foto, o caminho de uma foto própria em public/img (substitui a imagem do vídeo). Sem foto, em enquadramento, x e y são a posição do rosto na miniatura do YouTube (em %) e zoom é a aproximação. Em youtubeCanal, o link do canal.",
 
   "siteUrl": "",
 
@@ -11,9 +11,9 @@
 
   "youtubeCanal": "",
   "videosDepoimentos": [
-    { "url": "https://www.youtube.com/watch?v=YMlcsSfC-qs&t=1s", "nome": "Israel", "descricao": "Paciente", "enquadramento": { "x": 52, "y": 36, "zoom": 1.3 } },
-    { "url": "https://www.youtube.com/watch?v=Af-yt-ypyl8", "nome": "Pollyanna", "descricao": "Paciente", "enquadramento": { "x": 49, "y": 41, "zoom": 1.3 } },
-    { "url": "https://www.youtube.com/watch?v=1k9A9UV4s_Y", "nome": "Milena", "descricao": "Paciente", "enquadramento": { "x": 53, "y": 48, "zoom": 1.3 } }
+    { "url": "https://www.youtube.com/watch?v=YMlcsSfC-qs&t=1s", "nome": "Israel", "descricao": "Paciente", "foto": "/img/depoimento-israel.webp" },
+    { "url": "https://www.youtube.com/watch?v=Af-yt-ypyl8", "nome": "Pollyanna", "descricao": "Paciente", "foto": "/img/depoimento-pollyanna.webp" },
+    { "url": "https://www.youtube.com/watch?v=1k9A9UV4s_Y", "nome": "Milena", "descricao": "Paciente", "foto": "/img/depoimento-milena.webp" }
   ],
 
   "depoimentos": [

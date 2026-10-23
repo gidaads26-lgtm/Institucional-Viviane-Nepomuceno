@@ -296,7 +296,6 @@ a { color: inherit; }
   .video-play:hover .video-btn { transform: scale(1.08); }
 }
 .video-caption { font-size: var(--step--1); text-align: center; color: var(--muted); }
-.video-caption strong { font-family: var(--display); font-size: var(--step-0); font-weight: 500; color: var(--ink); }
 
 /* Capa do depoimento: fundo vinho com anéis, a pessoa numa janela à esquerda e o nome à direita.
    Medidas em cqw (largura da capa), para a composição ser a mesma no celular e no computador. */

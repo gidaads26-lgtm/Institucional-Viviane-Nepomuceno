@@ -280,7 +280,7 @@ a { color: inherit; }
 .video-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
 .video { display: grid; gap: .85rem; flex: 1 1 18rem; max-width: 24rem; }
 .video-vertical { flex-basis: 14rem; max-width: 18rem; }
-.video-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 1.25rem; background: var(--wine-deep); box-shadow: 0 24px 40px -28px rgba(122, 58, 48, .6); }
+.video-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 1.25rem; background: var(--wine-deep); box-shadow: 0 24px 40px -28px rgba(122, 58, 48, .6); container-type: inline-size; }
 .video-vertical .video-media { aspect-ratio: 9 / 16; }
 .video-play, .video-media iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
 .video-play img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease); }
@@ -295,7 +295,38 @@ a { color: inherit; }
   .video-play:hover img { transform: scale(1.04); }
   .video-play:hover .video-btn { transform: scale(1.08); }
 }
-.video-title { font-family: var(--display); font-size: var(--step-0); font-weight: 500; text-align: center; color: var(--ink); }
+.video-caption { font-size: var(--step--1); text-align: center; color: var(--muted); }
+.video-caption strong { font-family: var(--display); font-size: var(--step-0); font-weight: 500; color: var(--ink); }
+
+/* Capa do depoimento: fundo vinho com anéis, a pessoa numa janela à esquerda e o nome à direita.
+   Medidas em cqw (largura da capa), para a composição ser a mesma no celular e no computador. */
+.video-cover {
+  overflow: hidden; color: var(--paper);
+  background:
+    radial-gradient(circle at 76% 50%, transparent 0 24cqw, rgba(213, 139, 125, .4) 24cqw calc(24cqw + 1px), transparent calc(24cqw + 1px) 32cqw, rgba(213, 139, 125, .24) 32cqw calc(32cqw + 1px), transparent calc(32cqw + 1px) 41cqw, rgba(213, 139, 125, .12) 41cqw calc(41cqw + 1px), transparent calc(41cqw + 1px)),
+    radial-gradient(circle at 80% 35%, rgba(213, 139, 125, .32) 0%, rgba(213, 139, 125, 0) 55%),
+    radial-gradient(circle at 10% 115%, rgba(241, 205, 179, .18) 0%, rgba(241, 205, 179, 0) 50%),
+    var(--grad-wine);
+}
+.video-cover::after { display: none; }
+.cover-photo {
+  position: absolute; left: 6cqw; top: 50%; width: 32cqw; aspect-ratio: 3 / 4; translate: 0 -50%; overflow: hidden; border-radius: 3.5cqw; background: #120807;
+  box-shadow: 0 0 0 1.5px rgba(241, 205, 179, .6), 0 0 0 1.4cqw rgba(241, 205, 179, .08), 0 3cqw 6cqw -1cqw rgba(0, 0, 0, .55);
+}
+/* a miniatura do YouTube traz o vídeo em pé com faixas pretas; a ampliação recorta só a pessoa */
+.video-cover .cover-photo img { position: absolute; left: 50%; top: 0; width: 316%; max-width: none; height: auto; object-fit: fill; translate: -50% -17.5%; }
+.video-cover .cover-photo-own img { inset: 0; width: 100%; height: 100%; object-fit: cover; translate: none; }
+.video-cover .video-btn { left: 38cqw; width: 13cqw; height: 13cqw; box-shadow: 0 0 0 1.6cqw rgba(241, 205, 179, .22), 0 2.5cqw 5cqw -1cqw rgba(0, 0, 0, .6); }
+.video-cover .video-btn svg { width: 5cqw; height: 5cqw; margin-left: .8cqw; }
+.cover-text { position: absolute; left: 50cqw; right: 8cqw; top: 50%; translate: 0 -50%; display: grid; justify-items: start; gap: 1.6cqw; text-align: left; }
+.cover-kicker { font-size: 2.8cqw; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: var(--rose); }
+.cover-name { font-family: var(--display); font-variation-settings: 'SOFT' 100; font-size: 8.4cqw; font-weight: 500; line-height: 1; letter-spacing: -.01em; color: var(--champagne); text-wrap: balance; }
+.cover-number { font-size: 15cqw; font-weight: 400; }
+.cover-text::after { content: ''; width: 11cqw; height: 2px; margin-top: 1cqw; border-radius: 2px; background: var(--metal); }
+.cover-brand { position: absolute; right: 2.4cqw; top: 50%; translate: 0 -50%; writing-mode: vertical-rl; font-size: 1.9cqw; font-weight: 600; letter-spacing: .38em; text-transform: uppercase; color: rgba(243, 214, 203, .42); }
+@media (hover: hover) {
+  .video-cover:hover .cover-photo img { transform: scale(1.04); }
+}
 .voices-empty { position: relative; display: grid; justify-items: center; gap: 1.5rem; max-width: 38rem; margin-inline: auto; padding: 3rem 2rem 2.5rem; border-radius: 1.75rem; background: #fff; border: 1px solid var(--line); text-align: center; box-shadow: 0 24px 40px -32px rgba(122, 58, 48, .45); }
 .voices-quote { font-family: var(--display); font-size: 5rem; line-height: .6; color: var(--rose); }
 .voices-empty p { max-width: 38ch; color: var(--muted); }

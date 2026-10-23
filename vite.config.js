@@ -85,7 +85,7 @@ function montar(html, d) {
                 ${capa}
               </a>
             </div>
-            ${v.nome ? `<p class="video-caption"><strong>${escape(v.nome)}</strong>${v.descricao ? ` · ${escape(v.descricao)}` : ''}</p>` : ''}
+            ${v.descricao ? `<p class="video-caption">${escape(v.descricao)}</p>` : ''}
           </li>`;
   }).join(''));
   const base = (d.siteUrl || '').replace(/\/$/, '');

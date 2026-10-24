@@ -350,8 +350,6 @@ a { color: inherit; }
 .endorse-copy { display: grid; justify-items: center; gap: 1.1rem; text-align: center; }
 .endorse-copy .h2::after { content: ''; display: block; width: 3.5rem; height: 2px; margin: 1.1rem auto 0; border-radius: 2px; background: var(--metal); }
 .endorse-copy > p:not(.chip) { max-width: 46ch; color: var(--muted); }
-.endorse-who { font-size: var(--step--1); }
-.endorse-who strong { font-family: var(--display); font-size: var(--step-0); font-weight: 500; color: var(--ink); }
 .endorse-video .video-media { border-radius: 1.5rem; box-shadow: 0 0 0 1.5px rgba(178, 101, 88, .35), 0 34px 60px -34px rgba(122, 58, 48, .6); }
 
 /* ---------- 10. Dúvidas ---------- */

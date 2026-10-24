@@ -19,10 +19,10 @@
     { "url": "https://youtube.com/shorts/fG1__GXcXSE", "nome": "Andressa", "descricao": "Fisioterapeuta", "foto": "/img/depoimento-andressa.webp" },
     { "url": "https://www.youtube.com/shorts/W9jWS929iJ8", "nome": "Hellen", "descricao": "Educadora física", "foto": "/img/depoimento-hellen.webp" },
     { "url": "https://www.youtube.com/shorts/3NNVDGumFxA", "nome": "Janini", "descricao": "Empresária", "foto": "/img/depoimento-janini.webp" },
-    { "url": "https://www.youtube.com/shorts/iQFcBQ-aUV4", "nome": "Rosalina", "descricao": "Terapeuta", "enquadramento": { "x": 50, "y": 40, "zoom": 1.3 } },
-    { "url": "https://www.youtube.com/shorts/32xz6VzU6rU", "nome": "Guadalupe", "descricao": "Professora", "enquadramento": { "x": 50, "y": 40, "zoom": 1.3 } },
-    { "url": "https://www.youtube.com/shorts/3IF7Ogz92Yk", "nome": "Vania", "descricao": "Dona de casa", "enquadramento": { "x": 50, "y": 40, "zoom": 1.3 } },
-    { "url": "https://youtu.be/s5DrHXRhIQI", "nome": "Hanna", "descricao": "Empresária", "enquadramento": { "x": 50, "y": 40, "zoom": 1.3 } }
+    { "url": "https://www.youtube.com/shorts/iQFcBQ-aUV4", "nome": "Rosalina", "descricao": "Terapeuta", "foto": "/img/depoimento-rosalina.webp" },
+    { "url": "https://www.youtube.com/shorts/32xz6VzU6rU", "nome": "Guadalupe", "descricao": "Professora", "foto": "/img/depoimento-guadalupe.webp" },
+    { "url": "https://www.youtube.com/shorts/3IF7Ogz92Yk", "nome": "Vania", "descricao": "Dona de casa", "foto": "/img/depoimento-vania.webp" },
+    { "url": "https://youtu.be/s5DrHXRhIQI", "nome": "Hanna", "descricao": "Empresária", "foto": "/img/depoimento-hanna.webp" }
   ],
 
   "depoimentos": [

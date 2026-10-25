@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/ansiedadezero/", "destination": "https://viviane-nepomuceno-ansiedade-zero.vercel.app/" },
+    { "source": "/ansiedadezero/:path*", "destination": "https://viviane-nepomuceno-ansiedade-zero.vercel.app/:path*" }
+  ]
+}

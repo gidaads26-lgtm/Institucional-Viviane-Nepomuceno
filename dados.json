@@ -1,7 +1,7 @@
 {
   "_leia": "Preencha os campos com os dados da Viviane e rode npm run build. Campo vazio (\"\") ou null esconde o trecho do site. Em atendeOnline use true, false ou null (ainda não confirmado). Em videosDepoimentos cole os links dos vídeos do YouTube (vídeo comum ou Shorts), entre aspas e separados por vírgula. Para a capa, use { \"url\": \"link\", \"nome\": \"Nome da pessoa\", \"descricao\": \"Paciente\" }; sem nome, a capa mostra \"Paciente\". Em foto, o caminho de uma foto própria em public/img (substitui a imagem do vídeo). Sem foto, em enquadramento, x e y são a posição do rosto na miniatura do YouTube (em %) e zoom é a aproximação. Em youtubeCanal, o link do canal.",
 
-  "siteUrl": "",
+  "siteUrl": "https://www.terapiavivi.com.br",
 
   "endereco": "R. Santana, 134",
   "bairro": "Albertina",

@@ -24,8 +24,5 @@ for (const [nome, src] of Object.entries(fotos)) {
     await base.clone().webp({ quality: 74 }).toFile(path.join(OUT, `${nome}-${w}.webp`));
   }
 }
-// imagem de compartilhamento (WhatsApp, Instagram, Facebook)
-await sharp(fotos['viviane-hero']).rotate()
-  .resize(1200, 630, { fit: 'cover', position: 'top' }).jpeg({ quality: 80 })
-  .toFile(path.join(OUT, 'og-image.jpg'));
+// a imagem de compartilhamento (public/img/og-image.jpg) é uma arte própria, feita à parte
 console.log('ok');

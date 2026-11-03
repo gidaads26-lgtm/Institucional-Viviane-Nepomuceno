@@ -9,7 +9,7 @@
   "horarios": "",
   "atendeOnline": true,
 
-  "youtubeCanal": "",
+  "youtubeCanal": "https://www.youtube.com/@terapiavivi",
   "videosDepoimentos": [
     { "url": "https://www.youtube.com/shorts/uhoU1CoBwHU", "nome": "Laura", "descricao": "Nutricionista com mais de 1 milhão de seguidores no Instagram", "foto": "/img/depoimento-laura.webp" },
     { "url": "https://www.youtube.com/watch?v=1k9A9UV4s_Y", "nome": "Milena", "descricao": "Nutricionista que deixou o medicamento durante o tratamento", "foto": "/img/depoimento-milena.webp" },
